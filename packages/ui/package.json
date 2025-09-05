@@ -4,7 +4,8 @@
 	"type": "module",
 	"main": "./src/index.ts",
 	"scripts": {
-		"lint": "eslint . --ext .vue,.js,.ts"
+		"lint": "eslint . --ext .vue,.js,.ts",
+		"typecheck": "vue-tsc --noEmit"
 	},
 	"peerDependencies": {
 		"vue": "^3.0.0"
