@@ -1,8 +1,6 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-build/
 # Turbo cache
 .turbo/
 
@@ -24,3 +22,5 @@ Thumbs.db
 # Temporary folders
 tmp/
 temp/
+
+apps/web/.vite/
