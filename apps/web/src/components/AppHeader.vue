@@ -4,7 +4,9 @@
 			<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
 				{{ title }}
 			</h1>
-			<p class="text-lg text-gray-600">{{ subtitle }}</p>
+			<p class="text-lg text-gray-600">
+				{{ subtitle }}
+			</p>
 		</div>
 	</header>
 </template>

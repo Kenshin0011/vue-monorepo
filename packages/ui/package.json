@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"type": "module",
 	"main": "./src/index.ts",
+	"scripts": {
+		"lint": "eslint . --ext .vue,.js,.ts"
+	},
 	"peerDependencies": {
 		"vue": "^3.0.0"
 	}
