@@ -13,6 +13,8 @@
 		"test": {
 			"outputs": ["coverage/**", "junit.xml"]
 		},
-		"typecheck": {}
+		"typecheck": {
+			"dependsOn": ["^typecheck"]
+		}
 	}
 }
