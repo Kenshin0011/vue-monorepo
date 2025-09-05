@@ -10,6 +10,7 @@
 		"lint": "turbo run lint",
 		"lint:fix": "turbo run lint -- --fix",
 		"format": "prettier --write .",
+		"format:check": "prettier --check .",
 		"test": "turbo run test",
 		"typecheck": "turbo run typecheck"
 	},
