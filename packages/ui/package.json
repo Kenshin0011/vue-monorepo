@@ -1,0 +1,9 @@
+{
+	"name": "@vue-monorepo/ui",
+	"version": "1.0.0",
+	"type": "module",
+	"main": "./src/index.ts",
+	"peerDependencies": {
+		"vue": "^3.0.0"
+	}
+}
