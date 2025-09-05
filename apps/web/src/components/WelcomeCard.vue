@@ -16,7 +16,7 @@
 					:key="pkg.name"
 					class="flex items-center space-x-2"
 				>
-					<span :class="`w-2 h-2 ${pkg.color} rounded-full`"></span>
+					<span :class="`w-2 h-2 ${pkg.color} rounded-full`" />
 					<span
 						><strong>{{ pkg.name }}</strong> - {{ pkg.description }}</span
 					>

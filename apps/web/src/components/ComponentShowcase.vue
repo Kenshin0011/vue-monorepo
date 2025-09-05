@@ -9,14 +9,14 @@
 
 			<div class="space-y-3">
 				<div class="flex flex-wrap gap-2">
-					<Button variant="success" size="sm" icon="✅">Success</Button>
-					<Button variant="danger" size="sm" icon="🚨">Danger</Button>
-					<Button variant="secondary" size="sm">Secondary</Button>
+					<Button variant="success" size="sm" icon="✅"> Success </Button>
+					<Button variant="danger" size="sm" icon="🚨"> Danger </Button>
+					<Button variant="secondary" size="sm"> Secondary </Button>
 				</div>
 
 				<div class="flex flex-wrap gap-2">
-					<Button variant="primary" size="lg">Large Button</Button>
-					<Button variant="outline" size="xl">Extra Large</Button>
+					<Button variant="primary" size="lg"> Large Button </Button>
+					<Button variant="outline" size="xl"> Extra Large </Button>
 				</div>
 
 				<div class="flex flex-wrap gap-2">
@@ -27,7 +27,7 @@
 					>
 						{{ loading ? 'Loading...' : 'Test Loading' }}
 					</Button>
-					<Button variant="success" icon="💾">With Icon</Button>
+					<Button variant="success" icon="💾"> With Icon </Button>
 				</div>
 			</div>
 		</div>
