@@ -117,11 +117,30 @@ function createCoverageSummary() {
 		},
 	};
 
-	// Write combined summary
+	// Write combined summary in Istanbul format
 	const combinedSummary = {
 		total: overallCoverage,
-		projects: summaries,
 	};
+
+	// Add individual file entries from first project as example
+	if (summaries.length > 0) {
+		const firstProjectPath = path.join(
+			apps[0] || packages[0],
+			'coverage',
+			'coverage-summary.json',
+		);
+		if (fs.existsSync(firstProjectPath)) {
+			const firstProject = JSON.parse(
+				fs.readFileSync(firstProjectPath, 'utf8'),
+			);
+			// Copy all non-total entries
+			Object.keys(firstProject).forEach((key) => {
+				if (key !== 'total') {
+					combinedSummary[key] = firstProject[key];
+				}
+			});
+		}
+	}
 
 	fs.writeFileSync(
 		path.join(coverageDir, 'coverage-summary.json'),
