@@ -9,7 +9,8 @@ Modern Vue.js monorepo built with pnpm workspaces and Turborepo for efficient de
 - **Package Manager**: pnpm
 - **Monorepo Management**: Turborepo
 - **Code Quality**: ESLint + Prettier
-- **Testing**: Vitest
+- **Testing**: Vitest + Coverage reporting
+- **CI/CD**: GitHub Actions
 
 ## 📁 Directory Structure
 
@@ -95,6 +96,12 @@ pnpm typecheck
 ```bash
 # Run tests across all workspaces
 pnpm test
+
+# Run tests with coverage report
+pnpm coverage
+
+# Run tests with interactive UI
+pnpm test:ui
 ```
 
 ### Workspace Management
@@ -109,3 +116,26 @@ pnpm add -D -w eslint
 # Run command in specific workspace
 pnpm --filter web <command>
 ```
+
+## 🚦 CI/CD
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+### Quality Checks
+
+The `Quality Check` workflow runs on every push and pull request:
+
+- **Code Quality**: ESLint and Prettier checks
+- **Type Safety**: TypeScript type checking
+- **Testing**: Unit tests with Vitest
+- **Coverage**: Test coverage reporting (uploaded to Codecov)
+- **Build**: Verification that all packages build successfully
+
+### Workflow Features
+
+- ✅ Automated PR comments with coverage reports
+- ✅ Turbo caching for faster builds
+- ✅ Matrix builds across multiple Node.js versions
+- ✅ Integration with Codecov for coverage tracking
+
+All checks must pass before code can be merged to the main branch.
