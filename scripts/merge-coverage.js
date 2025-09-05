@@ -125,7 +125,7 @@ function createCoverageSummary() {
 
 	fs.writeFileSync(
 		path.join(coverageDir, 'coverage-summary.json'),
-		JSON.stringify(combinedSummary, null, 2),
+		JSON.stringify(combinedSummary, null, 2) + '\n',
 	);
 
 	// Print summary to console
