@@ -99,9 +99,6 @@ pnpm test
 
 # Run tests with coverage report
 pnpm coverage
-
-# Run tests with interactive UI
-pnpm test:ui
 ```
 
 ### Workspace Management
