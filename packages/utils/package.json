@@ -5,6 +5,8 @@
 	"main": "./src/index.ts",
 	"scripts": {
 		"lint": "eslint . --ext .js,.ts",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
 	}
 }

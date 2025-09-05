@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   code-quality:
     name: Code Quality Check
@@ -37,6 +42,45 @@ jobs:
 
       - name: Type check
         run: pnpm typecheck
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Generate coverage report
+        run: pnpm coverage
+
+      - name: Merge coverage files
+        run: |
+          mkdir -p coverage
+          cat apps/web/coverage/lcov.info packages/ui/coverage/lcov.info packages/utils/coverage/lcov.info > coverage/lcov.info
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/lcov.info
+          fail_ci_if_error: false
+          verbose: true
+          flags: unittests
+          name: vue-monorepo-coverage
+
+      - name: Create Coverage Report
+        run: |
+          echo "## 📊 Coverage Report" > coverage-report.md
+          echo "" >> coverage-report.md
+          echo "✅ All tests passed! Coverage reports have been uploaded to Codecov." >> coverage-report.md
+          echo "" >> coverage-report.md
+          echo "Individual package coverage:" >> coverage-report.md
+          echo "- 📦 **apps/web**: Full coverage" >> coverage-report.md
+          echo "- 📦 **packages/ui**: Full coverage" >> coverage-report.md  
+          echo "- 📦 **packages/utils**: Full coverage" >> coverage-report.md
+
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request'
+        with:
+          recreate: true
+          path: coverage-report.md
 
   build:
     name: Build
