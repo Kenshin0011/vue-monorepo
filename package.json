@@ -13,7 +13,7 @@
 		"format:check": "prettier --check .",
 		"test": "turbo run test",
 		"test:ui": "vitest --ui",
-		"coverage": "turbo run coverage",
+		"coverage": "turbo run coverage && node scripts/merge-coverage.js",
 		"typecheck": "turbo run typecheck"
 	},
 	"keywords": [],
