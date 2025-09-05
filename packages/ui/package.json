@@ -5,7 +5,9 @@
 	"main": "./src/index.ts",
 	"scripts": {
 		"lint": "eslint . --ext .vue,.js,.ts",
-		"typecheck": "vue-tsc --noEmit"
+		"typecheck": "vue-tsc --noEmit",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
 	},
 	"peerDependencies": {
 		"vue": "^3.0.0"
