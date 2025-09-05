@@ -41,12 +41,14 @@ vue-monorepo/
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone git@github.com:Kenshin0011/vue-monorepo.git
 cd vue-monorepo
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
